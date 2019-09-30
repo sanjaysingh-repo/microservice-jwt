@@ -1,0 +1,4 @@
+com/eureka/client/controllers/HomeController.class
+com/eureka/client/configuration/WebConfig.class
+com/eureka/client/configuration/TilesConfiguration.class
+com/eureka/client/SpringEurekaClientApp.class

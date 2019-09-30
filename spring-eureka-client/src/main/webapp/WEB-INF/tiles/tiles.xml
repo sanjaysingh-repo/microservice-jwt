@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+
+<tiles-definitions>
+
+	<definition name="welcome.definition" template="/outerpages/masterpage/masterpage.jsp">
+		<put-attribute name="header" value="/outerpages/masterpage/header.jsp" />
+		<put-attribute name="footer" value="/outerpages/masterpage/footer.jsp" />
+	</definition>
+	
+	<definition name="welcome" extends="welcome.definition">
+		<put-attribute name="mainbody" value="/outerpages/innerpages/login.jsp" />
+		<put-attribute name="title" value="Login Page - Complete erp for - Turtles Technologies Private Limited" />		
+	</definition>
+	
+	<definition name="404" extends="welcome.definition">
+		<put-attribute name="mainbody" value="/outerpages/innerpages/error.jsp" />
+		<put-attribute name="title" value="Error Page - Complete erp for - Turtles Technologies Private Limited" />	
+	</definition>
+	
+	<!-- Account Section -->
+	<definition name="useraccount.definition" template="/account/masterpages/masterpage.jsp">
+		<put-attribute name="header" value="/account/masterpages/header.jsp" />
+		<put-attribute name="sidenavigation" value="/account/masterpages/sidenavigation.jsp" />
+	</definition>
+	
+	<definition name="myuserprofile" extends="useraccount.definition">
+		<put-attribute name="mainbody" value="/account/childpages/myprofilepage.jsp" />
+		<put-attribute name="title" value="My Profiles Page - Complete erp for - Turtles Technologies Private Limited" />		
+	</definition>
+	
+</tiles-definitions>
