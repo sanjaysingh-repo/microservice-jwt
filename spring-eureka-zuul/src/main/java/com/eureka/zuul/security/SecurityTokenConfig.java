@@ -34,7 +34,8 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
 		.authorizeRequests()
 		   // allow all who are accessing "auth" service
 		   .antMatchers(HttpMethod.POST, jwtConfig.getUri()).permitAll() 
-		   .antMatchers("/client/**").permitAll() 
+		   .antMatchers("/client" + "/static/**").permitAll() 
+		   .antMatchers("/client/","/client/login","/client/oauth2/redirect**").permitAll() 
 		   .antMatchers("/client" + "/user/**").hasRole("USER")
 		   //.antMatchers("/**","oauth2/redirect**","/login**", "/error**")
            //.permitAll()
