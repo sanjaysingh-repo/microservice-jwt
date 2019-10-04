@@ -1,9 +1,9 @@
 package com.techturtles.common.social.security.oauth2;
 
 
-import com.nimbusds.oauth2.sdk.util.StringUtils;
 import com.techturtles.common.social.util.CookieUtils;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.security.oauth2.client.web.AuthorizationRequestRepository;
 import org.springframework.security.oauth2.core.endpoint.OAuth2AuthorizationRequest;
 import org.springframework.stereotype.Component;

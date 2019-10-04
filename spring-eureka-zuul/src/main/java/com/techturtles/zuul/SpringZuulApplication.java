@@ -8,8 +8,6 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 import com.techturtles.common.config.AppProperties;
 
-
-
 @SpringBootApplication
 @EnableEurekaClient 	// It acts as a eureka client
 @EnableZuulProxy		// Enable Zuul

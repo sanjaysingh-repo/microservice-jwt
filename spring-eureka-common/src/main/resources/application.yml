@@ -45,6 +45,9 @@ spring:
             client-name: Turtles Technologies Twitter login
             authorization-grant-type: authorization_code
             redirectUriTemplate: "{baseUrl}/oauth2/callback/{registrationId}"
+            scope:
+              - email
+              - profile
             clientAuthenticationScheme: form
           linkedIn:
             clientId: 771mrzk94hye1w

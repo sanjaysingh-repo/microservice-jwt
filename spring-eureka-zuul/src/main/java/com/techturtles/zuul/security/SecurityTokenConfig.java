@@ -4,7 +4,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -14,8 +18,21 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.techturtles.common.social.security.TokenAuthenticationFilter;
 
 
-@EnableWebSecurity 	// Enable security config. This annotation denotes config for spring security.
+@Configuration
+@EnableWebSecurity
+@EnableGlobalMethodSecurity(
+        securedEnabled = true,
+        jsr250Enabled = true,
+        prePostEnabled = true
+)
+@ComponentScan("com.techturtles.common")
 public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
+	
+	@Bean
+	@Lazy
+    public TokenAuthenticationFilter tokenAuthenticationFilter() {
+        return new TokenAuthenticationFilter();
+    }
 	
 	@Override
   	protected void configure(HttpSecurity http) throws Exception {
@@ -46,8 +63,4 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
            http.addFilterBefore(tokenAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
 	}
 	
-	@Bean
-    public TokenAuthenticationFilter tokenAuthenticationFilter() {
-        return new TokenAuthenticationFilter();
-    }
 }

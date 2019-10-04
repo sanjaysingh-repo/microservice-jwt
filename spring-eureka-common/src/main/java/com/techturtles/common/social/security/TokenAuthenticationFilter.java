@@ -20,7 +20,6 @@ import java.io.IOException;
 public class TokenAuthenticationFilter extends OncePerRequestFilter {
 
     @Autowired
-    @Lazy
     private TokenProvider tokenProvider;
 
     @Autowired
