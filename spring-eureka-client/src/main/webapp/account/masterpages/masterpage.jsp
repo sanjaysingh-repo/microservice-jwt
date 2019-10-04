@@ -4,7 +4,7 @@
             <c:set var="context" value="${pageContext.request.contextPath}" scope="request" />
 <html lang="en">
 <head>
-   
+   <base href="${context}/">
 	<!-- Page Title Here -->
     <title><tiles:insertAttribute name="title" ignore="true"></tiles:insertAttribute></title>
     <!-- Required meta tags -->

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Implementation-Title: spring-eureka-client
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: adda247
-Implementation-Vendor-Id: com.eureka.client
+Implementation-Vendor-Id: com.techturtles.client
 Build-Jdk: 1.8.0_221
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
  ot-starter-parent/spring-eureka-client
